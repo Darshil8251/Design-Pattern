@@ -1,7 +1,7 @@
 package main
 
 import (
-	"design-pattern/creational/bridge/paymentgateway"
+	"design-pattern/structural/bridge/paymentgateway"
 	"fmt"
 )
 

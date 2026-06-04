@@ -1,5 +1,7 @@
 package organization
 
+import "strings"
+
 type manager struct {
 	name       string
 	salary     float64
@@ -21,14 +23,15 @@ func NewManager(name string, salary float64, position string, department string)
 }
 
 func (m *manager) GetDetails() string {
-	details := "Name: " + m.name + ", Position: " + m.position + ", Department: " + m.department
+	var details strings.Builder
+	details.WriteString("Name: " + m.name + ", Position: " + m.position + ", Department: " + m.department)
 	if len(m.team) > 0 {
-		details += ", Team Members: "
+		details.WriteString(", Team Members: ")
 		for _, emp := range m.team {
-			details += emp.GetDetails() + "; "
+			details.WriteString(emp.GetDetails() + "; ")
 		}
 	}
-	return details
+	return details.String()
 }
 
 func (m *manager) GetSalary() float64 {

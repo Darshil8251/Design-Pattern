@@ -1,7 +1,7 @@
 package main
 
 import (
-	"design-pattern/creational/composite/organization"
+	"design-pattern/structural/composite/organization"
 )
 
 func main() {
