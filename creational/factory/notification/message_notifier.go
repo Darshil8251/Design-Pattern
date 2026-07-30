@@ -4,7 +4,7 @@ type messageNotifier struct {
 	phoneNumber string
 }
 
-func newMessageNotifier(phone string) notifier {
+func newMessageNotifier(phone string) *messageNotifier {
 	return &messageNotifier{
 		phoneNumber: phone,
 	}

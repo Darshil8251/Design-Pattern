@@ -69,9 +69,11 @@ func convertFields(fields map[any]any) []zap.Field {
 	if fields == nil {
 		return nil
 	}
-	f := make([]zap.Field, 0, len(fields))
+	f := make([]zap.Field, len(fields))
+	index := 0
 	for k, v := range fields {
-		f = append(f, zap.Any(fmt.Sprint(k), v))
+		f[index] = zap.Any(fmt.Sprint(k), v)
+		index++
 	}
 	return f
 }

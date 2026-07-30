@@ -8,7 +8,7 @@ type emailNotifier struct {
 	emailAddress string
 }
 
-func newEmailNotifier(email string) notifier {
+func newEmailNotifier(email string) *emailNotifier {
 	return &emailNotifier{
 		emailAddress: email,
 	}
